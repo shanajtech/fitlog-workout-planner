@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import WorkoutProvider from "./context/WorkoutContext";
 
 export const metadata = {
   title: "FitLog",
@@ -23,8 +24,10 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
-        <Navbar />
-        {children}
+        <WorkoutProvider>
+          <Navbar />
+          {children}
+        </WorkoutProvider>
       </body>
     </html>
   );

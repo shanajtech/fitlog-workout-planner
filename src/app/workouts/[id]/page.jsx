@@ -1,3 +1,5 @@
+import WorkoutActions from "../../components/WorkoutActions";
+
 const WorkoutDetailsPage = async ({ params }) => {
   const { id } = await params;
 
@@ -10,10 +12,8 @@ const WorkoutDetailsPage = async ({ params }) => {
   return (
     <main className="min-h-screen bg-[#0b0e12] text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
-          {/* Left Image */}
           <div>
             <img
               src={workout.image}
@@ -22,7 +22,6 @@ const WorkoutDetailsPage = async ({ params }) => {
             />
           </div>
 
-          {/* Right Content */}
           <div>
             <div className="flex flex-wrap gap-2 mb-5">
               {workout.muscleGroups.map((muscle) => (
@@ -43,10 +42,8 @@ const WorkoutDetailsPage = async ({ params }) => {
               {workout.description}
             </p>
 
-            {/* Specifications */}
             <div className="bg-[#15191e] border border-[#292e35] rounded-xl p-5 mt-7">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
                 <div>
                   <p className="text-[10px] text-[#777c84] uppercase">
                     Equipment
@@ -109,11 +106,9 @@ const WorkoutDetailsPage = async ({ params }) => {
                     ★ {workout.rating}
                   </p>
                 </div>
-
               </div>
             </div>
 
-            {/* Instructions */}
             <div className="mt-8">
               <h2 className="font-oswald text-2xl font-bold uppercase">
                 Instructions
@@ -125,9 +120,9 @@ const WorkoutDetailsPage = async ({ params }) => {
                     key={index}
                     className="flex gap-3 text-sm text-[#b1b4ba] leading-6"
                   >
-                <span className="text-[#b1b4ba] font-bold">
-  {index + 1}.
-</span>
+                    <span className="font-bold">
+                      {index + 1}.
+                    </span>
 
                     <span>{instruction}</span>
                   </li>
@@ -135,16 +130,7 @@ const WorkoutDetailsPage = async ({ params }) => {
               </ol>
             </div>
 
-            {/* Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
-              <button className="bg-[#b6ff00] text-black py-3 px-5 rounded-md text-sm font-bold">
-                ADD TO TODAY&apos;S PLAN
-              </button>
-
-              <button className="border border-[#4b5058] text-white py-3 px-5 rounded-md text-sm font-bold">
-                SAVE FOR LATER
-              </button>
-            </div>
+            <WorkoutActions workout={workout} />
 
           </div>
         </div>

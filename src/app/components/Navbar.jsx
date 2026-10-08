@@ -1,12 +1,13 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useContext } from "react";
+import { WorkoutContext } from "../context/WorkoutContext";
 
 const Navbar = () => {
   const pathname = usePathname();
-
+const { plan, saved } = useContext(WorkoutContext);
   return (
     <nav className="bg-[#0b0e12] border-b border-[#20242b]">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
@@ -57,7 +58,7 @@ const Navbar = () => {
             <span className="hidden sm:inline">Plan</span>
 
             <span className="w-5 h-5 rounded-full bg-[#b6ff00] text-black flex items-center justify-center text-[10px] font-bold">
-              0
+              {plan.length}
             </span>
           </Link>
 
@@ -68,7 +69,7 @@ const Navbar = () => {
             <span className="hidden sm:inline">Saved</span>
 
             <span className="w-5 h-5 rounded-full border border-[#555a62] flex items-center justify-center text-[10px]">
-              0
+                {saved.length}
             </span>
           </Link>
         </div>
