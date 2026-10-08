@@ -7,17 +7,22 @@ import { WorkoutContext } from "../context/WorkoutContext";
 const WorkoutActions = ({ workout }) => {
   const { plan, setPlan, saved, setSaved } = useContext(WorkoutContext);
 
-  const handleAddToPlan = () => {
-    const alreadyAdded = plan.find((item) => item.id === workout.id);
+const handleAddToPlan = () => {
+  const alreadyAdded = plan.find((item) => item.id === workout.id);
 
-    if (alreadyAdded) {
-      toast.error("Workout already added to today's plan");
-      return;
-    }
+  if (alreadyAdded) {
+    toast.error("Workout already added to today's plan");
+    return;
+  }
 
-    setPlan([...plan, workout]);
-    toast.success("Added to today's plan");
-  };
+  if (plan.length >= 5) {
+    toast.error("Today's plan can have a maximum of 5 workouts");
+    return;
+  }
+
+  setPlan([...plan, workout]);
+  toast.success("Added to today's plan");
+};
 
   const handleSave = () => {
     const alreadySaved = saved.find((item) => item.id === workout.id);
