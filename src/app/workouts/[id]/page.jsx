@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import WorkoutActions from "../../components/WorkoutActions";
 
 const WorkoutDetailsPage = async ({ params }) => {
@@ -6,7 +7,9 @@ const WorkoutDetailsPage = async ({ params }) => {
   const response = await fetch(
     `https://api.abcz.workers.dev/api/fitlog/${id}`
   );
-
+if (!response.ok) {
+  notFound();
+}
   const workout = await response.json();
 
   return (

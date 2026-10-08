@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WorkoutProvider from "./context/WorkoutContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,7 +29,11 @@ export default function RootLayout({ children }) {
       <body>
         <WorkoutProvider>
           <Navbar />
+
           {children}
+
+          <Footer />
+
           <ToastContainer theme="dark" />
         </WorkoutProvider>
       </body>
