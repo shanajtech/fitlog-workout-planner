@@ -1,8 +1,13 @@
+import Hero from "./components/Hero";
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>FitLog</h1>
-    </div>
+    <main>
+      <Hero />
+
+      <section id="library">
+      </section>
+    </main>
   );
 };
 
