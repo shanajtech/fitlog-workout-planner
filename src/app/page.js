@@ -1,12 +1,11 @@
 import Hero from "./components/Hero";
+import WorkoutLibrary from "./components/WorkoutLibrary";
 
 const HomePage = () => {
   return (
     <main>
       <Hero />
-
-      <section id="library">
-      </section>
+      <WorkoutLibrary />
     </main>
   );
 };
