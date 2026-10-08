@@ -21,6 +21,9 @@ Key Features
 6. Sort workouts by Duration, Calories, or Rating.
 7. Responsive design for mobile, tablet, and desktop devices.
 8. Custom loading states and a custom 404 page for invalid routes.
+9. Search workouts by workout name or muscle group.
+10. Plan and saved workouts are stored in localStorage, so they remain after page refresh.
+11. Today's Plan is limited to a maximum of 5 workouts.
 
 Pages
 
