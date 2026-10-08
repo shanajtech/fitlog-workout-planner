@@ -1,6 +1,8 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import WorkoutProvider from "./context/WorkoutContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "FitLog",
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
         <WorkoutProvider>
           <Navbar />
           {children}
+          <ToastContainer theme="dark" />
         </WorkoutProvider>
       </body>
     </html>
