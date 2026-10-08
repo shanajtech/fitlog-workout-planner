@@ -67,14 +67,28 @@ const PlanWorkoutCard = ({ workout, showDoneButton, type }) => {
           VIEW DETAILS
         </Link>
 
-        {showDoneButton && (
-          <button
-            onClick={handleMarkAsDone}
-            className="bg-[#b6ff00] text-black px-4 py-2 rounded-md text-xs font-bold cursor-pointer hover:bg-[#9fe000] active:scale-95 transition-all"
-          >
-            MARK AS DONE
-          </button>
-        )}
+     {showDoneButton && (
+  <button
+    onClick={handleMarkAsDone}
+    className="flex items-center gap-2 bg-[#b6ff00] text-black px-4 py-2 rounded-md text-xs font-bold cursor-pointer hover:bg-[#9fe000] active:scale-95 transition-all"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+
+    MARK AS DONE
+  </button>
+)}
 
         <button
           onClick={handleRemove}

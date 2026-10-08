@@ -108,16 +108,37 @@ const MyPlanPage = () => {
           </div>
 
           {currentWorkouts.length > 0 && (
-            <div className="pb-3">
-              <select
-                value={sortBy}
-                onChange={(event) => setSortBy(event.target.value)}
-                className="bg-[#15191e] border border-[#3a3f46] text-[#bfc1c5] text-sm rounded-md px-4 py-2 cursor-pointer outline-none"
-              >
-                <option value="duration">Duration</option>
-                <option value="calories">Calories</option>
-                <option value="rating">Rating</option>
-              </select>
+            <div className="pb-3 flex items-center gap-2 mt-4 sm:mt-0">
+              <span className="text-xs text-[#8d9198] font-semibold">
+                SORT BY
+              </span>
+
+              <div className="relative">
+                <select
+                  value={sortBy}
+                  onChange={(event) => setSortBy(event.target.value)}
+                  className="appearance-none bg-[#15191e] border border-[#3a3f46] text-[#bfc1c5] text-sm rounded-md pl-4 pr-10 py-2 cursor-pointer outline-none"
+                >
+                  <option value="duration">Duration</option>
+                  <option value="calories">Calories</option>
+                  <option value="rating">Rating</option>
+                </select>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[#8d9198]"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
             </div>
           )}
         </div>
