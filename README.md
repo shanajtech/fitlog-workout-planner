@@ -1,41 +1,54 @@
-FitLog
+# FitLog — Workout Planner
 
-FitLog is a responsive workout library and daily workout planner built with Next.js. Users can explore different workouts, view detailed exercise information, add workouts to today's plan, save workouts for later, and manage their daily workout plan.
+A responsive workout library and daily planner built with Next.js and React. Explore exercises, build today's plan, and save workouts for later.
 
-Technologies Used
+[Live demo](https://fitlog-workout-planner.vercel.app/) · [Source code](https://github.com/shanajtech/fitlog-workout-planner)
 
-Next.js
-React
-JavaScript
-Tailwind CSS
-React Context API
-React Toastify
+## Highlights
 
-Key Features
+- Search workouts by name or muscle group and sort by duration, calories, or rating.
+- Explore exercise details, equipment, difficulty, sets, reps, and step-by-step instructions.
+- Add up to five workouts to today's plan, mark exercises as done, and remove them.
+- Save workouts for later with live navigation counters and toast feedback.
+- Review planned exercise totals, minutes, and calories.
+- Keep plans and saved workouts after refresh using browser localStorage.
+- Browse layouts for mobile, tablet, and desktop, with loading states and a custom 404 page.
 
-1. Browse a responsive workout library with workout images, muscle groups, equipment, duration, calories, and ratings.
-2. View detailed workout information including equipment, difficulty, sets, reps, duration, calories, rating, and step-by-step instructions.
-3. Add workouts to Today's Plan and save workouts for later with live navbar counters and toast notifications.
-4. Manage planned workouts with View Details, Mark as Done, and Remove functionality.
-5. View live workout metrics including total exercises, minutes, and calories.
-6. Sort workouts by Duration, Calories, or Rating.
-7. Responsive design for mobile, tablet, and desktop devices.
-8. Custom loading states and a custom 404 page for invalid routes.
-9. Search workouts by workout name or muscle group.
-10. Plan and saved workouts are stored in localStorage, so they remain after page refresh.
-11. Today's Plan is limited to a maximum of 5 workouts.
+## Built with
 
-Pages
+Next.js App Router, React, JavaScript, Tailwind CSS, React Context API, and React Toastify.
 
-Home / Workout Library
-Workout Details
-My Plan
-Custom 404 Page
+## Run locally
 
-API
+Install a Node.js version compatible with the Next.js version in `package.json`, then:
 
-Workout data is loaded dynamically from the FitLog API.
+```bash
+git clone https://github.com/shanajtech/fitlog-workout-planner.git
+cd fitlog-workout-planner
+npm ci
+npm run dev
+```
 
-Project Purpose
+Open [localhost:3000](http://localhost:3000).
 
-FitLog provides a simple and focused workout planning experience where users can browse exercises, build a daily workout plan, save exercises for later, and track their planned workout statistics.
+## Available commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build |
+| `npm start` | Serve a completed production build |
+
+## Pages and data
+
+- **Workout library:** `/`
+- **Workout details:** `/workouts/[id]`
+- **Today's plan:** `/my-plan`
+- **Workout API:** [FitLog API](https://api.abcz.workers.dev/api/fitlog)
+
+The workout library depends on the external API being available. Plans and saved workouts stay in the current browser; they are not synchronized to an account or database.
+
+## Portfolio focus
+
+API-driven interfaces, reusable React components, shared state, browser persistence, and interactive planning workflows.
